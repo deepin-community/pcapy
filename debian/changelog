@@ -1,0 +1,198 @@
+pcapy (0.11.4-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Mon, 14 Nov 2022 17:48:16 +0800
+
+pcapy (0.11.4-2) unstable; urgency=medium
+
+  * Add Break+Replaces for python-pcapy (Closes: #947387)
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Wed, 25 Dec 2019 23:01:59 -0300
+
+pcapy (0.11.4-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/changelog: Remove trailing whitespaces
+  * Remove debian/pycompat, it's not used by any modern Python helper
+  * Convert git repository from git-dpm to gbp layout
+  * Bump Standards-Version to 4.4.1.
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Sophie Brun ]
+  * Update to recommend the Python 3 package
+
+  [ Emmanuel Arias ]
+  * new upstream version to 0.11.4
+  * Maintaining package in python team. Closes: #895787
+  * Fix d/watch. This had has some errors reported for Lintian.
+  * Create and init git-dpm for the package
+  * Get DEP-5 format to d/copyright and correct LICENCE
+  * Add Testsuite: autopkgtest-pkg-python to debian/changelog
+  * Update Standards-Version from 3.9.2 to 4.1.3
+  * Update Homepage from debian/changelog
+  * Add export PYBUILD_NAME=pcapy to d/rules
+  * Add export DEB_BUILD_MAINT_OPTIONS = hardening=+all  to d/rules
+  * Add the rm'ing LICENCE file after install on d/rules
+  * Update d/compat to from 5 to 11
+  * Update debhelper to >= 11 on Build-Depends field on d/control file
+  * Remove the "Suggests: doc-base" from d/control
+  * Add build for Python3.
+  * Modify upstream Licence on d/copyright.
+  * Delete Provides field on d/control.
+  * Modify Description field on d/control.
+  * Update my contact information
+    - change on d/control and d/copyright
+  * d/doc-base: Fix doc path.
+  * Remove Python 2 support. Closes: #937259
+  * Bump standar-version to 4.4.0
+  * Bump debhelper-compat to 12
+
+  [ Raphaël Hertzog ]
+  * Install documentation in correct directory
+  * Add basic autopkgtest
+  * Fix syntax error in copyright file
+  * Disable failing assertion in testEOFValue
+
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Tue, 26 Nov 2019 10:34:20 +0100
+
+pcapy (0.10.8-1) unstable; urgency=low
+
+  * New upstream release.
+    + Drop debian/patches/fix_sigsegv.patch applied by upstream.
+  * Use dh_python2 rather than deprecated dh_pycentral. Closes: #616934.
+    + debian/control:
+      - Rename now deprecated XS-Python-Version to X-Python-Version.
+      - Remove now deprecated XB-Python-Version.
+      - Bump cdbs version to 0.4.90-1~.
+      - Bump python-all-dev version to 2.6.6-3~.
+      - Remove Build-Depends on python-central.
+    + debian/rules:
+      - Remove DEB_PYTHON_SYSTEM.
+  * debian/control:
+    + Bump Standards-Version to 3.9.2. No changes needed.
+  * debian/changelog:
+    + Update copyright years.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Mon, 18 Apr 2011 13:47:46 +0900
+
+pcapy (0.10.6-2) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * Switch to dpkg-source 3.0 (quilt) format.
+    + Drop Build-Depends on patchutils in debian/control.
+    + Drop include of simple-patchsys.mk in debian/rules.
+  * debian/control:
+    + Bump Standards-Version to 3.9.1. No changes needed.
+  * debian/patches:
+    + Add fix_sigsegv.patch to fix SIGSEGV. Thanks to Jakub Wilk.
+      Closes: #589956.
+  * debian/copyright:
+    + Update copyright years.
+
+  [ Jakub Wilk ]
+  * New upstream URL: update debian/copyright, debian/watch and
+    debian/control.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 29 Jul 2010 19:12:19 +0100
+
+pcapy (0.10.6-1) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New upstream release. Closes: #500043.
+  * Add 02_remove_exception_on_next.patch, next() now returns None instead
+    of raising an exception when pcap_next() returns NULL. Closes: #500041.
+    + Add 03_regenerate_html_doc.patch as the patch updates the
+      documentation.
+  * debian/control:
+    + Add ${misc:Depends} Depends in case the result of a call to any of
+      dh_ commands cause the package to depend on another one.
+    + Update Standards-Version to 3.8.0. No change needed.
+    + Update Homepage field.
+  * debian/copyright:
+    + Update download location.
+    + Update copyright years.
+  * debian/watch:
+    + Update URL.
+
+  [ Sandro Tosi ]
+  * debian/control:
+    - Switch Vcs-Browser field to viewsvn.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Mon, 15 Dec 2008 01:33:24 +0000
+
+pcapy (0.10.5-2) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New email address.
+  * Remove useless debian/control.in.
+  * debian/changelog:
+    + Update copyright years.
+  * debian/control:
+    + Update Standards-Version to 3.7.3. No changes needed.
+    + Fix spelling error in description by replacing python by Python.
+  * debian/doc-base:
+    + Update section to Programming/Python.
+
+  [ Piotr Ożarowski ]
+  * debian/control:
+    + Add Homepage field.
+    + Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now).
+
+  [ Sandro Tosi ]
+  * debian/control
+    - Uniformise Vcs-Browser field.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 29 May 2008 20:58:28 +0200
+
+pcapy (0.10.5-1) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New upstream release.
+  * debian/control*:
+    + Add Suggests against doc-base.
+    + Update Build-Depends.
+    + Remove useless Replaces and Conflicts fields as etch has been
+      released.
+  * debian/doc-base:
+    + Add doc-base for the documentation.
+  * debian/copyrigth:
+    + Update copyright years.
+    + Add copyright for the package.
+
+  [ Piotr Ozarowski ]
+  * Added XS-Vcs-{Svn,Browser} field.
+  * Added debian/watch file.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Tue, 08 May 2007 11:57:24 +0200
+
+pcapy (0.10.4-2) unstable; urgency=low
+
+  * Update Standards-Version to 3.7.2. No changes needed.
+  * New Python policy changes. Closes: #373475.
+    + Add debian/pycompat.
+    + debian/compat:
+      - Update debhelper compatibility to 5.
+    + debian/rules:
+      - Add DEB_PYTHON_SYSTEM=pycentral.
+      - Clean debian/rules.
+    + debian/control.in:
+      - Remove all versioned packages.
+      - Add XB-Python-Version field for binary package.
+      - Add XS-Python-Version field for source package.
+      - Add Conflicts and Replaces fields against previous revisions.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Sat, 24 Jun 2006 17:04:20 +0200
+
+pcapy (0.10.4-1) unstable; urgency=low
+
+  * Initial release. Closes: #322727.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Tue, 11 Apr 2006 14:08:14 +0200

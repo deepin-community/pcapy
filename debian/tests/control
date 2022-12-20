@@ -1,0 +1,3 @@
+Test-Command: cd tests && python3 pcapytests.py
+Depends: python3-pcapy
+Restrictions: allow-stderr
