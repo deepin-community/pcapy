@@ -1,0 +1,20 @@
+--- a/setup.py
++++ b/setup.py
+@@ -45,13 +45,13 @@
+     macros.append(('WIN32', '1'))
+ 
+ # HACK replace linker gcc with g++
+-from distutils import sysconfig
++import sysconfig
+ save_init_posix = sysconfig._init_posix
+ 
+ 
+-def my_init_posix():
+-    save_init_posix()
+-    g = sysconfig._config_vars
++def my_init_posix(vars):
++    save_init_posix(vars)
++    g = sysconfig._CONFIG_VARS
+     compiler = g['LDSHARED'].split()[0]
+     flags = g['LDSHARED'].split()[1:]
+     if compiler == 'gcc':
