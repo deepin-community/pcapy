@@ -18,4 +18,3 @@ override_dh_auto_clean:
 override_dh_auto_install:
 	dh_auto_install
 	rm -rf debian/python3-pcapy/usr/share/doc/pcapy
-

@@ -1,1 +1,3 @@
 Disable-failing-assertion-in-testEOFValue.patch
+py_ssize_t.patch
+init-posix.patch
